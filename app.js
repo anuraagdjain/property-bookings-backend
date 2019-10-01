@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const responseMW = require("./middlewares/response.middleware");
 
 const app = express();
 
@@ -15,6 +16,10 @@ app.use(
     limit: "5mb"
   })
 );
+
+// middlewares
+app.use(responseMW);
+require("./config/passport.config");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
