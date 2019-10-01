@@ -9,7 +9,6 @@ const bcrypt = require("bcrypt");
 const jsonwebtoken = require("jsonwebtoken");
 const jwtConfig = require("./jwt.config");
 const { jwtUtil } = require("../lib/utils");
-const { authService } = require("../lib/services/v1");
 
 passport.use(
   new LocalStratergy(
@@ -23,7 +22,6 @@ passport.use(
         const user = await db.user.findOne({ where: { mobile } });
         if (user) {
           if (bcrypt.compareSync(password, user.password)) {
-            await authService.logout(user.id);
             const token = jwtUtil.generateToken({
               id: user.id,
               mobile: user.mobile
