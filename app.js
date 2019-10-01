@@ -32,10 +32,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // routes
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const appRouter = require("./routes");
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/v1/auth", appRouter.v1.authRoute);
 
 module.exports = app;
