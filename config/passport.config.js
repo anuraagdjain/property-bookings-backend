@@ -13,24 +13,23 @@ const { jwtUtil } = require("../lib/utils");
 passport.use(
   new LocalStratergy(
     {
-      usernameField: "user[mobile]",
+      usernameField: "user[email]",
       passwordField: "user[password]",
       passReqToCallback: true
     },
-    async (req, mobile, password, done) => {
+    async (req, email, password, done) => {
       try {
-        const user = await db.user.findOne({ where: { mobile } });
+        const user = await db.user.findOne({ where: { email } });
         if (user) {
           if (bcrypt.compareSync(password, user.password)) {
             const token = jwtUtil.generateToken({
               id: user.id,
               mobile: user.mobile
             });
-            await db.oauthtoken.create({ userId: user.id, token });
             return done(null, { user, token });
           }
         }
-        throw new Error(I18n.t("validations.invalid.credentials"));
+        throw new Error("Invalid credentials");
       } catch (error) {
         return done(error, null);
       }
@@ -48,18 +47,15 @@ passport.use(
     async (payload, done) => {
       try {
         if (payload) {
-          const jwtToken = jsonwebtoken.sign(payload, jwtConfig.secretKey);
+          // const jwtToken = jsonwebtoken.sign(payload, jwtConfig.secretKey);
           const user = await db.user.findOne({
             where: { mobile: payload.mobile, id: payload.id }
           });
-          const oAuth = await db.oauthtoken.findOne({
-            where: { userId: user.id, active: true, token: jwtToken }
-          });
-          if (user && oAuth) {
+          if (user) {
             return done(null, user);
           }
         }
-        throw new Error(I18n.t("validations.invalid.credentials"));
+        throw new Error("Invalid credentials");
       } catch (error) {
         return done(error, null);
       }
