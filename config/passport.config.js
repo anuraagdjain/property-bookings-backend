@@ -24,7 +24,7 @@ passport.use(
           if (bcrypt.compareSync(password, user.password)) {
             const token = jwtUtil.generateToken({
               id: user.id,
-              mobile: user.mobile
+              email: user.email
             });
             return done(null, { user, token });
           }
@@ -49,7 +49,7 @@ passport.use(
         if (payload) {
           // const jwtToken = jsonwebtoken.sign(payload, jwtConfig.secretKey);
           const user = await db.user.findOne({
-            where: { mobile: payload.mobile, id: payload.id }
+            where: { email: payload.email, id: payload.id }
           });
           if (user) {
             return done(null, user);
