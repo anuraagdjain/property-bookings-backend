@@ -36,5 +36,6 @@ const appRouter = require("./routes");
 
 app.use("/v1/auth", appRouter.v1.authRoute);
 app.use("/v1/properties", appRouter.v1.propertyRoute);
+app.use("/v1/bookings", appRouter.v1.bookingRoute);
 
 module.exports = app;
