@@ -5,7 +5,10 @@ module.exports = {
   listAllProperties: async (req, res) => {
     try {
       // 1. fetch all properties
-      const properties = await propertyService.listAllProperties();
+      const properties = await propertyService.listAllProperties(
+        req.query.city,
+        req.query.country
+      );
       return res.success({ properties });
     } catch (error) {
       return res.serverFail(400, errorHandler(error));
