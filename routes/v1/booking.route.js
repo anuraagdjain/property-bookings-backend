@@ -13,4 +13,6 @@ router.post(
   bookingController.create
 );
 
+router.get("/", bookingController.list);
+
 module.exports = router;

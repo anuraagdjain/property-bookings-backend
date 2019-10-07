@@ -2,6 +2,14 @@ const { bookingService, propertyService } = require("../../../lib/services/v1");
 const { errorHandler } = require("../../../lib/utils");
 
 module.exports = {
+  list: async (req, res) => {
+    try {
+      const bookings = await bookingService.listAllBookings();
+      return res.success({ bookings });
+    } catch (error) {
+      return res.serverFail(400, errorHandler(error));
+    }
+  },
   create: async (req, res) => {
     try {
       const { booking } = req.body;
