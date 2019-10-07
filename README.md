@@ -13,13 +13,13 @@
 - Run `yarn install` or `npm i` into project directory
 - create `.env.development` and `.env.production` in the root of the project and paste the following:
 
-  ```APP_DOMAIN=localhost 
-     NODE_ENV=development 
-     DB_HOST=127.0.0.1 
-     DB_USER=root 
-     DB_PASS=mysql_pass_here 
+  ```APP_DOMAIN=localhost
+     NODE_ENV=development
+     DB_HOST=127.0.0.1
+     DB_USER=root
+     DB_PASS=mysql_pass_here
      JWT_SECRET_KEY=123
-     ```
+  ```
 
 # DB setup
 
@@ -29,3 +29,5 @@
 - `NODE_ENV=development node_modules/.bin/sequelize db:drop --env=development` - drops the db
 
 To start the project run `npm run start:development` to start the project in `localhost:3000`.
+
+Postman collection: `https://www.getpostman.com/collections/3a980b6620a4f7566ba8`
