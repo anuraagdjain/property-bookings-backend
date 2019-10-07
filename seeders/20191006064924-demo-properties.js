@@ -8,6 +8,7 @@ module.exports = {
       [
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "196 Merrion Road, Elm Park, Dublin, D04 T6F4",
           lat: 53.3040522,
           lng: -6.2343492,
@@ -19,6 +20,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Churchtown Rd Lower, Rathmines Great, Dublin 14, D14 KW90",
           lat: 53.3084807,
           lng: -6.2506199,
@@ -30,6 +32,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address:
             "Unit 11, Vergemount, Bóthar Chluain Sceach, Rathmines, Clonskeagh, Co. Dublin",
           lat: 53.3161323,
@@ -42,6 +45,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "14 Lower Kilmacud Rd, Mountanville, Dublin, D14 PY56",
           lat: 53.3075286,
           lng: -6.2600014,
@@ -53,6 +57,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Friedrichstraße 43-45, 10117 Berlin, Germany",
           lat: 52.5058876,
           lng: 13.3765775,
@@ -64,6 +69,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Grunerstraße 20, 10179 Berlin, Germany",
           lat: 52.5058876,
           lng: 13.3765775,
@@ -75,6 +81,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Schloßstraße 34, 12163 Berlin, Germany",
           lat: 52.4551894,
           lng: 13.3157716,
@@ -86,6 +93,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Bayerstraße 10A, 80335 München, Germany",
           lat: 48.1411447,
           lng: 11.5114213,
@@ -97,6 +105,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Englischer Garten 3, 80538 München, Germany",
           lat: 48.1411447,
           lng: 11.5114213,
@@ -108,6 +117,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Fritz-Grünbaum-Platz 1, 1060 Wien, Austria",
           lat: 48.1819332,
           lng: 16.3259285,
@@ -119,6 +129,7 @@ module.exports = {
         },
         {
           name: faker.company.companyName(),
+          photo: faker.image.city(250, 250),
           address: "Kundratstraße 3, 1100 Wien, Austria",
           lat: 48.1730248,
           lng: 16.3493511,

@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER
       },
       name: DataTypes.STRING,
+      photo: DataTypes.STRING,
       lat: { type: DataTypes.FLOAT, allowNull: false, required: true },
       lng: { type: DataTypes.FLOAT, allowNull: false, required: true },
       address: DataTypes.STRING,
