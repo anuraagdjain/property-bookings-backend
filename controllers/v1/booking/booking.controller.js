@@ -9,8 +9,11 @@ module.exports = {
       await propertyService.isValidProperty(booking.propertyId);
 
       // 2. create booking
-      await bookingService.createBooking(booking, req.user.id);
-      return res.success();
+      const bookingObj = await bookingService.createBooking(
+        booking,
+        req.user.id
+      );
+      return res.success({ booking: bookingObj });
     } catch (error) {
       return res.serverFail(400, errorHandler(error));
     }
