@@ -11,8 +11,15 @@
 
 - Download the zip / clone the repo
 - Run `yarn install` or `npm i` into project directory
-- create `.env.development` and `.env.production` and paste the following
-  `APP_DOMAIN=localhost NODE_ENV=development DB_HOST=127.0.0.1 DB_USER=root DB_PASS= JWT_SECRET_KEY=123`
+- create `.env.development` and `.env.production` in the root of the project and paste the following:
+
+  ```APP_DOMAIN=localhost 
+     NODE_ENV=development 
+     DB_HOST=127.0.0.1 
+     DB_USER=root 
+     DB_PASS=mysql_pass_here 
+     JWT_SECRET_KEY=123
+     ```
 
 # DB setup
 
